@@ -2,9 +2,8 @@
 
 Insturctions:
 ---
-1. Select a rom directory (searches all sub-directories as well, so you can choose root of your SD card)
-2. Select box art directory (For DSiMenu++ sd:/\_nds/dsimenuplusplus/boxart)
-3. Click the "Download BoxArt!" button
+1. Select the SD card drive letter
+2. Click the "Download BoxArt!" button
 
 Credits:
 ---
