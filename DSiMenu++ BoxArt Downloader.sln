@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSiMenu++ BoxArt Downloader", "DSiMenu++ BoxArt Downloader\DSiMenu++ BoxArt Downloader.csproj", "{3BBA82FD-1DAB-4A0A-9237-A66D2AB0D7BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BBA82FD-1DAB-4A0A-9237-A66D2AB0D7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BBA82FD-1DAB-4A0A-9237-A66D2AB0D7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BBA82FD-1DAB-4A0A-9237-A66D2AB0D7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BBA82FD-1DAB-4A0A-9237-A66D2AB0D7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C569F06-634D-4216-A15A-CE6A59CB3D5C}
+	EndGlobalSection
+EndGlobal
