@@ -120,6 +120,14 @@ namespace DSiMenu___BoxArt_Downloader {
 				System.IO.Stream responseStream = response.GetResponseStream();
 				return new Bitmap(responseStream);
 			} catch(Exception) {
+				try {
+					//If general did not work try US
+					request = System.Net.WebRequest.Create("http://art.gametdb.com/ds/coverS/US/" + gameCode + ".png");
+					System.Net.WebResponse response = request.GetResponse();
+					System.IO.Stream responseStream = response.GetResponseStream();
+					return new Bitmap(responseStream);
+				} catch (Exception) {
+				}
 			}
 			return null;
 		}
