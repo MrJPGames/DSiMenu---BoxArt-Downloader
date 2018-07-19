@@ -63,12 +63,13 @@ namespace DSiMenu___BoxArt_Downloader {
 
 				//Really ugly but couldn't find a way to find the Length/Count of myFiles
 				foreach (string f in myFiles) {
-					if (GetSystemType(f) != 0x03 && GetGameCode(f) != "####") 
+					string gameCode = GetGameCode(f);
+					if (GetSystemType(f) != 0x03 && gameCode != "####" && gameCode != "KBSE")
 						total++;
 				}
 				foreach (string f in myFiles) {
 					string gameCode = GetGameCode(f);
-					if (gameCode != "####") {
+					if (gameCode != "####" && gameCode != "KBSE") {
 						//Skip homebrew titles!
 						Bitmap boxArt = null;
 						if (GetSystemType(f) != 0x03) {
@@ -79,13 +80,16 @@ namespace DSiMenu___BoxArt_Downloader {
 							progressBar1.Invalidate();
 							progressBar1.Update();
 							boxArt = DownloadArtNTR(gameCode);
+
+							if (boxArt != null) {
+								totalSuccesful++;
+								SaveBoxArt(boxArt, gameCode);
+							} else {
+								Console.WriteLine("Failed to get boxart for: " + gameCode + ", " + f);
+							}
 						} else {
 							//Game is DSi-Exclusive or DSiWare
 							//Skip until a site/database of DSiWare cover art data is found
-						}
-						if (boxArt != null) {
-							totalSuccesful++;
-							SaveBoxArt(boxArt, gameCode);
 						}
 					}
 				}
@@ -110,26 +114,49 @@ namespace DSiMenu___BoxArt_Downloader {
 			return (int)systemType[0];
 		}
 
+		private bool DownloadBitmap(string url, ref Bitmap b) {
+			System.Net.WebRequest request = System.Net.WebRequest.Create(url);
+			try {
+				System.Net.WebResponse response = request.GetResponse();
+				System.IO.Stream responseStream = response.GetResponseStream();
+				b = new Bitmap(responseStream);
+				responseStream.Close();
+				response.Close();
+				return true;
+			} catch (Exception) {
+				return false;
+			}
+		}
+
 		private Bitmap DownloadArtNTR(string gameCode) {
 			button3.Text = "Downloading box art for " + gameCode;
 			button3.Invalidate();
 			button3.Update();
-			System.Net.WebRequest request = System.Net.WebRequest.Create("http://art.gametdb.com/ds/coverS/EN/" + gameCode + ".png");
-			try {
-				System.Net.WebResponse response = request.GetResponse();
-				System.IO.Stream responseStream = response.GetResponseStream();
-				return new Bitmap(responseStream);
-			} catch(Exception) {
-				try {
-					//If general did not work try US
-					request = System.Net.WebRequest.Create("http://art.gametdb.com/ds/coverS/US/" + gameCode + ".png");
-					System.Net.WebResponse response = request.GetResponse();
-					System.IO.Stream responseStream = response.GetResponseStream();
-					return new Bitmap(responseStream);
-				} catch (Exception) {
+			Bitmap ret = null;
+			String US_Url = "http://art.gametdb.com/ds/coverS/EN/" + gameCode + ".png";
+			String EU_Url = "http://art.gametdb.com/ds/coverS/US/" + gameCode + ".png";
+			String JP_Url = "http://art.gametdb.com/ds/coverS/JA/" + gameCode + ".png";
+			String AU_Url = "http://art.gametdb.com/ds/coverS/AU/" + gameCode + ".png";
+			if (gameCode[3] == 'E') {
+				//Rom is most likely US
+				if (!DownloadBitmap(US_Url, ref ret)) 
+					if (!DownloadBitmap(EU_Url, ref ret)) 
+						DownloadBitmap(JP_Url, ref ret); //Just to be sure (in case a non ***J game is JAP)
+			} else if (gameCode[3] == 'J') {
+				//Rom is most likely JAP
+				if (!DownloadBitmap(JP_Url, ref ret)) 
+					if (!DownloadBitmap(US_Url, ref ret)) 
+						DownloadBitmap(EU_Url, ref ret);
+			} else {
+				//So it's EU?
+				if (!(gameCode[3] == 'H' && DownloadBitmap("http://art.gametdb.com/ds/coverS/JA/" + gameCode + ".png", ref ret))) { 
+					if (!DownloadBitmap(EU_Url, ref ret))
+						if (!DownloadBitmap(AU_Url, ref ret)) //Do AU box art if default PAL/EU boxart is not available (still English)
+							if (!DownloadBitmap(US_Url, ref ret)) //Get US if no EU available (in english)
+								DownloadBitmap(JP_Url, ref ret); //Just to be sure (in case a non ***J game is JAP)
 				}
 			}
-			return null;
+			return ret;
 		}
 
 		private void SaveBoxArt(Bitmap b, String gameCode) {
@@ -153,7 +180,8 @@ namespace DSiMenu___BoxArt_Downloader {
 
 				//Really ugly but couldn't find a way to find the Length/Count of myFiles
 				foreach (string f in myFiles) {
-					if (GetSystemType(f) != 0x03 && GetGameCode(f) != "####")
+					string gameCode = GetGameCode(f);
+					if (GetSystemType(f) != 0x03 &&  gameCode != "####" && gameCode != "KBSE")
 						total++;
 				}
 				validDriveSelected = true;
