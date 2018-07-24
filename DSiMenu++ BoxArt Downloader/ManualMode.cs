@@ -25,7 +25,7 @@ namespace DSiMenu___BoxArt_Downloader {
 					int current = 0;
 					int totalSuccesful = 0;
 					var ext = new List<string> { ".nds" };
-					var myFiles = Directory.GetFiles(textBox1.Text, "*.*", SearchOption.AllDirectories)
+					var myFiles = Directory.GetFiles(textBox1.Text, "*.*", SearchOption.TopDirectoryOnly)
 							.Where(s => ext.Contains(Path.GetExtension(s)));
 
 					//Really ugly but couldn't find a way to find the Length/Count of myFiles
