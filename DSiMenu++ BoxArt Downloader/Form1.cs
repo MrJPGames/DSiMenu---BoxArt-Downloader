@@ -125,8 +125,11 @@ namespace DSiMenu___BoxArt_Downloader {
 		}
 
 		private void manualDirectorySelectToolStripMenuItem_Click(object sender, EventArgs e) {
-			var win = new ManualMode();
-			win.ShowDialog();
+			new ManualMode().ShowDialog();
+		}
+
+		private void importHiyaCFWSplashToolStripMenuItem_Click(object sender, EventArgs e) {
+			new HiyaSplashSetterView().ShowDialog();
 		}
 	}
 }

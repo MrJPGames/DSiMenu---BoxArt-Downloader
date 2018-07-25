@@ -35,6 +35,7 @@
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.manualDirectorySelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.importHiyaCFWSplashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -115,7 +116,8 @@
 			// toolsToolStripMenuItem
 			// 
 			this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manualDirectorySelectToolStripMenuItem});
+            this.manualDirectorySelectToolStripMenuItem,
+            this.importHiyaCFWSplashToolStripMenuItem});
 			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
 			this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
 			this.toolsToolStripMenuItem.Text = "Tools";
@@ -123,9 +125,16 @@
 			// manualDirectorySelectToolStripMenuItem
 			// 
 			this.manualDirectorySelectToolStripMenuItem.Name = "manualDirectorySelectToolStripMenuItem";
-			this.manualDirectorySelectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.manualDirectorySelectToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
 			this.manualDirectorySelectToolStripMenuItem.Text = "Manual mode";
 			this.manualDirectorySelectToolStripMenuItem.Click += new System.EventHandler(this.manualDirectorySelectToolStripMenuItem_Click);
+			// 
+			// importHiyaCFWSplashToolStripMenuItem
+			// 
+			this.importHiyaCFWSplashToolStripMenuItem.Name = "importHiyaCFWSplashToolStripMenuItem";
+			this.importHiyaCFWSplashToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+			this.importHiyaCFWSplashToolStripMenuItem.Text = "Import HiyaCFW splash";
+			this.importHiyaCFWSplashToolStripMenuItem.Click += new System.EventHandler(this.importHiyaCFWSplashToolStripMenuItem_Click);
 			// 
 			// Form1
 			// 
@@ -165,6 +174,7 @@
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem manualDirectorySelectToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem importHiyaCFWSplashToolStripMenuItem;
 	}
 }
 
