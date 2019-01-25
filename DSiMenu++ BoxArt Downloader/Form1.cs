@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace DSiMenu___BoxArt_Downloader {
 	public partial class Form1 : Form {
-		private static string boxArtDirectory = "_nds\\dsimenuplusplus\\boxart\\";
+		private static string boxArtDirectory = "_nds\\TWiLightMenu\\boxart\\";
 		List<String> drives = new List<String>();
 
 		bool validDriveSelected = false;
@@ -103,7 +103,7 @@ namespace DSiMenu___BoxArt_Downloader {
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
 			int total = 0;
-			if (Directory.Exists(comboBox1.Text + "_nds\\dsimenuplusplus\\boxart")) {
+			if (Directory.Exists(comboBox1.Text + "_nds\\TWiLightMenu\\boxart")) {
 				var ext = new List<string> { ".nds" };
 				var myFiles = Directory.GetFiles(comboBox1.Text, "*.*", SearchOption.AllDirectories)
 					 .Where(s => ext.Contains(Path.GetExtension(s)));
@@ -119,7 +119,7 @@ namespace DSiMenu___BoxArt_Downloader {
 				button3.Enabled = true;
 			} else {
 				validDriveSelected = false;
-				label2.Text = "SD Card with no or old DSiMenu++";
+				label2.Text = "SD Card with no or old TWiLight Menu++";
 				button3.Enabled = false;
 			}
 		}
@@ -130,6 +130,10 @@ namespace DSiMenu___BoxArt_Downloader {
 
 		private void importHiyaCFWSplashToolStripMenuItem_Click(object sender, EventArgs e) {
 			new HiyaSplashSetterView().ShowDialog();
+		}
+
+		private void Form1_Load(object sender, EventArgs e) {
+
 		}
 	}
 }
