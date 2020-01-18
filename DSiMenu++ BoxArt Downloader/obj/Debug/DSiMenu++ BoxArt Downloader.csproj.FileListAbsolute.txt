@@ -1,0 +1,11 @@
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\obj\Debug\DSiMenu++ BoxArt Downloader.csprojAssemblyReference.cache
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\bin\Debug\DSiMenu++ BoxArt Downloader.exe.config
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\bin\Debug\DSiMenu++ BoxArt Downloader.exe
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\bin\Debug\DSiMenu++ BoxArt Downloader.pdb
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\obj\Debug\DSiMenu___BoxArt_Downloader.Form1.resources
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\obj\Debug\DSiMenu___BoxArt_Downloader.HiyaSplashSetterView.resources
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\obj\Debug\DSiMenu___BoxArt_Downloader.ManualMode.resources
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\obj\Debug\DSiMenu___BoxArt_Downloader.Properties.Resources.resources
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\obj\Debug\DSiMenu++ BoxArt Downloader.csproj.GenerateResource.cache
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\obj\Debug\DSiMenu++ BoxArt Downloader.exe
+D:\Users\admin\Downloads\DSiMenu---BoxArt-Downloader-master\DSiMenu++ BoxArt Downloader\obj\Debug\DSiMenu++ BoxArt Downloader.pdb

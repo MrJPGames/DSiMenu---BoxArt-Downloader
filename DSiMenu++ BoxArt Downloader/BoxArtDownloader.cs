@@ -72,8 +72,7 @@ namespace DSiMenu___BoxArt_Downloader {
 		}
 
 		public static void SaveBoxArt(Bitmap b, String saveTo, String gameCode) {
-			Bitmap finalImage = ConvertTo16bpp(b);
-			finalImage.Save(saveTo + gameCode + ".bmp", ImageFormat.Bmp);
+			b.Save(saveTo + gameCode + ".png", ImageFormat.Png);
 		}
 
 		public static Bitmap ConvertTo16bpp(Image img) {
